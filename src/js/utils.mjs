@@ -11,13 +11,16 @@ export function getLocalStorage(key) {
 }
 // save data to local storage
 export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
+  const existingData = getLocalStorage(key) || [];
+  const newData = [...existingData, data];
+  localStorage.setItem(key, JSON.stringify(newData));
 }
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
+  const parent = qs(selector).parentNode;
+  parent.addEventListener("touchend", (event) => {
     event.preventDefault();
     callback();
   });
-  qs(selector).addEventListener("click", callback);
+  parent.addEventListener("click", callback);
 }
