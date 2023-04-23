@@ -10,6 +10,7 @@ export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
 // save data to local storage
+
   export function setLocalStorage(key, data) {
     let currentData = JSON.parse(localStorage.getItem(key)) || [];
     currentData = Array.isArray(currentData) ? currentData : [currentData];
