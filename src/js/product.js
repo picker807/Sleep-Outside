@@ -8,7 +8,6 @@ function addProductToCart(product) {
 }
 // add to cart button event handler
 async function addToCartHandler(e) {
-  console.log("add to cart button clicked");
   const product = await dataSource.findProductById(e.target.dataset.id);
   addProductToCart(product);
 }
