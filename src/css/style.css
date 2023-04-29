@@ -202,6 +202,23 @@ button {
   grid-column: 3;
 }
 
+.newsletter-container {
+text-align:center;
+padding:1em;
+max-width:100%;
+margin:auto;
+}
+
+.newsletter-fields input {
+padding:1em;
+margin:.5em;
+max-width:100%;
+padding:1em
+}
+.newsletter-fields {
+  display:grid
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
