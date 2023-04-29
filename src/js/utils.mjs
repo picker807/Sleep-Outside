@@ -33,3 +33,13 @@ export function setClick(selector, callback) {
   });
   qs(selector).addEventListener("click", callback);
 }
+
+export function renderListWithTemplate(
+  templateFn, parentElement, list, position = "afterbegin", clear = false
+  ) {
+    const htmlStringData = list.map(templateFn);
+    if (clear) {
+      parentElement.innerHTML = "";
+    }
+    parentElement.insertAdjacentHTML(position, htmlStringData.join(""));
+  }
