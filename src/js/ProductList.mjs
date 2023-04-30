@@ -34,7 +34,6 @@ export default class ProductListing{
           }
         }));
         const finalList = filteredList.filter(item => item !== undefined);
-        console.log(finalList);
         this.renderList(finalList);
       }  
     renderList(list) {
