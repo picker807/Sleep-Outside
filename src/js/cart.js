@@ -12,7 +12,7 @@ function makeFooterVisible(cartFooter, numItems) {
 function getTotal(cartItems){
   let totalCost = 0;
   let numItems = 0;
-  for (let i = 0; i <cartItems.length; i++) {
+  for (let i = 0; i < cartItems.length; i++) {
     const item = cartItems[i];
     const finalCost = item.FinalPrice;
     totalCost += finalCost;
