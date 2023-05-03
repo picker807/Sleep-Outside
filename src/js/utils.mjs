@@ -34,12 +34,36 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-export function renderListWithTemplate(
-  templateFn, parentElement, list, position = "afterbegin", clear = false
-  ) {
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
     const htmlStringData = list.map(templateFn);
     if (clear) {
       parentElement.innerHTML = "";
     }
     parentElement.insertAdjacentHTML(position, htmlStringData.join(""));
+}
+
+export function renderWithTemplate(templateFn, parentElement, data, callback) {
+  parentElement.insertAdjacentHTML("afterbegin", templateFn);
+  if(callback) {
+    callback(data);
   }
+}
+
+async function loadTemplate(path) {
+const data = await fetch(path);
+const template = await data.text();
+return template
+}
+
+export async function loadHeaderFooter() {
+  const headerTemp = await loadTemplate("../partials/header.html");
+  const headerElem = document.querySelector("#main-header");
+  renderWithTemplate(headerTemp, headerElem);
+
+  const footerTemp = await loadTemplate("../partials/footer.html");
+  const footerElem = document.querySelector("#main-footer");
+  renderWithTemplate(footerTemp, footerElem);
+
+}
+
+
