@@ -6,10 +6,10 @@ loadHeaderFooter();
 
 const category = getParam("category")
 const dataInfo = new ProductData();
-const listElement = document.querySelector(".product-list");
-const dataList = new ProductListing(category, dataInfo, listElement);
+const elem = document.querySelector(".product-list");
+const list = new ProductListing(category, dataInfo, elem);
 
-dataList.init();
+list.init();
 
 // Wait for slider to be clicked to change the arranged data
 let slider = document.getElementById("sortByPrice");
@@ -51,3 +51,4 @@ function searchBar() {
     }
   });
 }
+

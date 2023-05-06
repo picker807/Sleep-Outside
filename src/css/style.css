@@ -202,6 +202,70 @@ button {
   grid-column: 3;
 }
 
+/* Style the product grid */
+.product-grid {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the list items */
+.product-grid li {
+  width: calc(25% - 10px);
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Add hover effect to list items */
+.product-grid li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the links */
+.product-grid li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Style the images */
+.product-grid li img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80px;
+  height: 80px;
+  transition: transform 0.2s ease-out;
+}
+
+/* Add hover effect to images */
+.product-grid li:hover img {
+  transform: rotate(20deg);
+}
+
+/* Style the headings */
+.product-grid li h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-out;
+}
+
+/* Add hover effect to headings */
+.product-grid li:hover h2 {
+  color: #f9c74f;
+}
+
+
 /* Start Newsletter styles */
 #news-signup {
   width: 80%;
@@ -224,6 +288,7 @@ button {
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 1px #777;
 }
+
 .newsletter-container {
   text-align: center;
   padding: 1em;
