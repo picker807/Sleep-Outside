@@ -202,21 +202,266 @@ button {
   grid-column: 3;
 }
 
-.newsletter-container {
-text-align:center;
-padding:1em;
-max-width:100%;
-margin:auto;
+/* Start Newsletter styles */
+#news-signup {
+  width: 80%;
+  max-width: 500px;
+  margin: 2em auto;
+  border: 1px solid #303030;
+  border-radius: 6px;
 }
-
+#submit {
+  background-color: #f0a868;
+  border-radius: 6px;
+  color: #303030;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  margin-top: 1em;
+}
+#submit:hover {
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 1px #777;
+}
+.newsletter-container {
+  text-align: center;
+  padding: 1em;
+  max-width: 100%;
+  margin: auto;
+}
 .newsletter-fields input {
-padding:1em;
-margin:.5em;
-max-width:100%;
-padding:1em
+  padding: 1em;
+  margin: 0.5em;
+  max-width: 100%;
+  padding: 1em;
 }
 .newsletter-fields {
-  display:grid
+  display: grid;
+}
+
+/* CSS for product details page breadcrumbs */
+.breadcrumbs {
+  padding: 10px 18px;
+  background-color: rgb(238, 238, 238);
+  justify-content: center;
+  text-align: center;
+}
+
+.breadcrumbs > li {
+  display: inline-block;
+}
+.breadcrumbs > li > a {
+  color: var(--dark-grey);
+  text-decoration: none;
+}
+
+.breadcrumbs > li > a:hover {
+  text-decoration: underline;
+  background-color: var(--primary-color);
+  padding: 0.3em;
+}
+
+.breadcrumbs li + li:before {
+  padding: 4px;
+  content: "/";
+}
+
+/* CSS for switch on product listing page */
+#searchBar {
+  margin: auto 10px;
+  height: 30px;
+  width: 190px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Product listing pages search css */
+.product-listing-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  /* grid-template-columns: 20% auto 20%; */
+}
+.products {
+  padding: 0.5em;
+}
+.product-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+.product-list a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+/* Styles for product lists */
+.product-card {
+  flex: 1 1 45%;
+  margin: 0.25em;
+  padding: 0.5em;
+  border: 1px solid var(--light-grey);
+  max-width: 250px;
+}
+.product-card h2,
+.product-card h3,
+.product-card p {
+  margin: 0.5em 0;
+}
+
+.product__color {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.card__brand {
+  font-size: var(--small-font);
+}
+
+.card__name {
+  font-size: 1em;
+}
+
+.product-detail {
+  padding: 1em;
+  max-width: 500px;
+  margin: auto;
+}
+
+ul.color__pick {
+  display: flex;
+  list-style: none;
+}
+
+ul.color__pick > li {
+  padding: 2px;
+}
+/* End product list card */
+
+.product-card__discount,
+.base__discount {
+/*PRODUCT-LISTING PAGE*/
+color: red;
+text-decoration: solid 3px underline;
+text-shadow: 1px 1px 10px white, 1px 1px 10px white;
+}
+
+.product-card__price {
+color: green;
+text-decoration: solid 3px underline;
+text-shadow: 1px 1px 10px var(--primary-color), 1px 1px 10px #ffff00;
+margin-left: 6px;
+}
+
+.container__origin-price {
+text-shadow: 1px 1px 10px white, -1px -1px 10px white;
+margin-left: 15px;
+}
+
+.product-card__orginal-price,
+.base__orginal-price {
+/*PRODUCT-LISTING PAGE*/
+/*PRODUCT-LISTING PAGE*/
+text-decoration: line-through;
+}
+
+div.pricing-container {
+  border: 5px solid rgb(255, 102, 0);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 0, 0.2);
+  width: fit-content;
+  padding: 0 1rem;
+  margin-top: 20px;
+}
+
+.descriptor-label {
+  font-weight: 600;
+}
+
+/******************* START ADDED CSS FOR THE HOME PAGE 4 PRODUCT ICONS ********************************/
+.product-categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style-type: none;
+  max-width: 80%;
+  margin: auto;
+}
+
+.product-categories li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-categories li a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+/******************* END ADDED CSS FOR THE HOME PAGE 4 PRODUCT ICONS ********************************/
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(45, 194, 48);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 500px) {
