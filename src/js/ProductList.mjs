@@ -11,14 +11,14 @@ function productCardTemplate(product) {
     </li>`
 }
 
-async function checkImageExists(imageSrc){
-    return new Promise (resolve => {
-        const img = new Image();
-        img.onload = () =>  resolve(true);
-        img.onerror = () => resolve(false);
-        img.src = imageSrc;
-        });
-    }
+//async function checkImageExists(imageSrc){
+//    return new Promise (resolve => {
+//        const img = new Image();
+//        img.onload = () =>  resolve(true);
+//        img.onerror = () => resolve(false);
+//        img.src = imageSrc;
+//        });
+//    }
 
 export default class ProductListing{
     constructor (category, dataSource, listElement) {

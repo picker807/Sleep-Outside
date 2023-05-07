@@ -17,9 +17,9 @@ slider.addEventListener("change", () => {
   const search = document.querySelector("#searchBar");
   search.value = "";
   if (slider.checked == true) {
-    dataList.init(true);
+    list.init(true);
   } else {
-    dataList.init();
+    list.init();
   }
 });
 
