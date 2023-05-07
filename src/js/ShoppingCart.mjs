@@ -5,7 +5,7 @@ function cartItemTemplate(item) {
     const newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
       <img
-        src="${item.Image}"
+        src="${item.Images.PrimaryMedium}"
         alt="${item.Name}"
       />
     </a>
@@ -13,7 +13,7 @@ function cartItemTemplate(item) {
       <h2 class="card__name">${item.Name}</h2>
     </a>
     <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-    <p class="cart-card__quantity">qty: 1</p>
+    <p class="cart-card__quantity">qty: ${item.quantity}</p>
     <p class="cart-card__price">$${item.FinalPrice}</p>
   </li>`;
   
@@ -34,9 +34,9 @@ function makeFooterVisible(cartFooter, numItems) {
     let numItems = 0;
     for (let i = 0; i < cartItems.length; i++) {
       const item = cartItems[i];
-      const finalCost = item.FinalPrice;
+      const finalCost = item.quantity * item.FinalPrice;
       totalCost += finalCost;
-      numItems += 1
+      numItems += item.quantity;
     }
     renderTotal(numItems, totalCost); 
   }
@@ -44,7 +44,7 @@ function makeFooterVisible(cartFooter, numItems) {
   function renderTotal(numItems, totalCost) {
     const cartFooter = document.querySelector(".cart-footer");
     cartFooter.querySelector(".cart-items").innerHTML += numItems;
-    cartFooter.querySelector(".cart-total").innerHTML += "$" + totalCost;
+    cartFooter.querySelector(".cart-total").innerHTML += "$" + totalCost.toFixed(2);
     makeFooterVisible(cartFooter, numItems);
   }
 export default class ShoppingCart {

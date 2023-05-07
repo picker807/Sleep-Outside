@@ -9,13 +9,40 @@ export function qs(selector, parent = document) {
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }
+
 // save data to local storage
+//export function setLocalStorage(key, data) {
+//  let currentData = JSON.parse(localStorage.getItem(key)) || [];
+//  currentData = Array.isArray(currentData) ? currentData : [currentData];
+//  const newData = [...currentData, data];
+//  localStorage.setItem(key, JSON.stringify(newData));
+//}
 export function setLocalStorage(key, data) {
   let currentData = JSON.parse(localStorage.getItem(key)) || [];
   currentData = Array.isArray(currentData) ? currentData : [currentData];
-  const newData = [...currentData, data];
-  localStorage.setItem(key, JSON.stringify(newData));
+  let updatedData = [...currentData];
+  const index = currentData.findIndex((item) => {
+    console.log('item.id:', item.Id);
+    console.log('data.id:', data.Id);
+    return item.Id === data.Id;
+  });
+  
+  console.log('currentData:', currentData);
+  console.log('updatedData:', updatedData);
+  console.log('index:', index);
+  
+  if (index !== -1) {
+    updatedData[index].quantity += data.quantity;
+  } else {
+    updatedData.push(data);
+  }
+
+  console.log('updatedData after change:', updatedData);
+
+  localStorage.setItem(key, JSON.stringify(updatedData));
 }
+
+
 
 // helper to get parameter strings
 export function getParam(param) {

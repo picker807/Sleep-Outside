@@ -33,8 +33,19 @@ export default class ProductDetails {
       .addEventListener("click", this.addToCart.bind(this));
   }
   addToCart() {
-    setLocalStorage("so-cart", this.product);
+    const quantity = parseInt(prompt("Enter quantity:"));
+    if (!quantity || quantity < 1) {
+      alert("Invalid quantity. Please enter a number greater than 0.");
+      return;
+    }
+    const productWithQuantity = {
+      ...this.product,
+      quantity
+    };
+    console.log("ProductWithQuantity: ", productWithQuantity);
+    setLocalStorage("so-cart", productWithQuantity);
   }
+
   renderProductDetails(selector) {
     const element = document.querySelector(selector);
     element.insertAdjacentHTML(
