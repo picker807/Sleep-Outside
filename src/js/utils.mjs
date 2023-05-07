@@ -22,23 +22,13 @@ export function setLocalStorage(key, data) {
   currentData = Array.isArray(currentData) ? currentData : [currentData];
   let updatedData = [...currentData];
   const index = currentData.findIndex((item) => {
-    console.log('item.id:', item.Id);
-    console.log('data.id:', data.Id);
     return item.Id === data.Id;
   });
-  
-  console.log('currentData:', currentData);
-  console.log('updatedData:', updatedData);
-  console.log('index:', index);
-  
   if (index !== -1) {
     updatedData[index].quantity += data.quantity;
   } else {
     updatedData.push(data);
   }
-
-  console.log('updatedData after change:', updatedData);
-
   localStorage.setItem(key, JSON.stringify(updatedData));
 }
 
