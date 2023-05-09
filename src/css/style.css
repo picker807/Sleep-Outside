@@ -551,3 +551,85 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+/*Checkout Button (Cart Page)*/
+#checkout-button {
+display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#checkout-button:hover {
+  background-color: #0062cc;
+}
+/*End Checkout Button*/
+
+/*Checkout Page*/
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 50%;
+}
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px #ccc;
+  outline: none;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="submit"]:disabled {
+  background-color: gray;
+  cursor: default;
+}
+
+.order-summary {
+  width: 40%;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.order-summary h2 {
+  margin-top: 0;
+}
+
+.order-summary p, .order-summary h3 {
+  margin-bottom: 10px;
+}

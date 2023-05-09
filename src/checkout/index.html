@@ -20,6 +20,50 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
+      <div class="container">
+        <div class="form-container">
+          <form id="checkout-form">
+            <h2>Customer Information</h2>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" required>
+      
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" required>
+      
+            <label for="street-address">Street Address:</label>
+            <input type="text" id="street-address" required>
+      
+            <label for="city">City:</label>
+            <input type="text" id="city" required>
+      
+            <label for="state">State:</label>
+            <input type="text" id="state" required>
+      
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="zip-code" required>
+      
+            <h2>Payment Information</h2>
+            <label for="credit-card-number">Credit Card Number:</label>
+            <input type="text" id="credit-card-number" required>
+      
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" id="expiration-date" required>
+      
+            <label for="security-code">Security Code:</label>
+            <input type="text" id="security-code" required>
+      
+            <button type="submit" id="checkout-btn" disabled>Checkout</button>
+          </form>
+        </div>
+      
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <p>Subtotal: $0.00</p>
+          <p>Shipping Estimate: $0.00</p>
+          <p>Tax: $0.00</p>
+          <h3>Order Total: $0.00</h3>
+        </div>
+      </div>
     </main>
 
     <footer id="main-footer"></footer>
