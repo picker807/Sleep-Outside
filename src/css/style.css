@@ -2,9 +2,9 @@
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
-  --primary-color: #f0a868;
-  --secondary-color: #525b0f;
-  --tertiary-color: #a4b8c4;
+  --primary-color: #efa441;
+  --secondary-color: #3fa8ba;
+  --tertiary-color: #12c9a6;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
 
@@ -415,6 +415,23 @@ div.pricing-container {
   text-align: center;
 }
 /******************* END ADDED CSS FOR THE HOME PAGE 4 PRODUCT ICONS ********************************/
+
+/*************************** START OF ADDED FOR CHECKOUT BUTTON ********************************/
+button.cart-checkout {
+  margin: 0 0 0 auto;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+button.cart-checkout:hover {
+  cursor: pointer;
+}
+
+a.checkout-button-link {
+  text-decoration: none;
+}
+/*************************** END OF ADDED FOR CHECKOUT BUTTON ********************************/
+
 
 /* The slider */
 .slider {
