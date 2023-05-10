@@ -432,6 +432,104 @@ a.checkout-button-link {
 }
 /*************************** END OF ADDED FOR CHECKOUT BUTTON ********************************/
 
+/*************************** START OF FORM CSS FOR CHECKOUT PAGE *******************************/
+#orderForm {
+  max-width: 50%;
+  min-width: 400px;
+  margin: 2em auto;
+}
+form fieldset,
+fieldset {
+  margin: 2rem 0;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 0.5rem 2%;
+}
+form legend,
+legend {
+  /* font-weight: 900; */
+  font-size: 1.5rem;
+  color: rgba(40, 79, 51, 0.912);
+  background-color: rgba(240, 168, 104, 0.5);
+  /* border: 2px solid rgba(40, 79, 51, 0.912); */
+  border-radius: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.25rem 1rem;
+}
+form label.top,
+form div,
+label.top {
+  display: block;
+  padding-top: 1rem;
+  color: var(--dark-grey);
+  padding: 2px;
+  font-size: 0.8rem;
+}
+form label.top input,
+form label.top select,
+form label.top textarea,
+#myEmail,
+#myPassword {
+  -webkit-appearance: none;
+  display: block;
+  font-size: 1rem;
+  border: solid 1px #999;
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: #555;
+  width: 100%;
+  max-width: 20rem;
+  background-color: #e3f0ff;
+  margin-bottom: 1rem;
+}
+form label.top input:required,
+label.top input:required#myPassword,
+label.top input:required#myEmail {
+  border-left: #f9695f solid 6px;
+}
+form label.top input:required:valid,
+label.top input:required:valid#myEmail,
+label.top input:required:valid#myPassword {
+  border-left: #207e8e solid 6px;
+}
+#top_line {
+  width: 95%;
+  max-width: 19.85rem;
+  border-top: 2px solid var(--primary-color);
+  margin: 0 0 1rem 2.75%;
+}
+#send1 {
+  margin: 0;
+  padding-top: 1.95rem;
+  padding-bottom: 1.95rem;
+  display: inline;
+  border-left: 2px solid var(--primary-color);
+  border-radius: 1rem;
+}
+#send2 {
+  margin: 0;
+  margin-left: 1%;
+  padding-top: 1.95rem;
+  padding-bottom: 1.95rem;
+  display: inline;
+  border-right: 2px solid var(--primary-color);
+  border-radius: 1rem;
+}
+#bottom_line {
+  width: 95%;
+  max-width: 19.85rem;
+  border-top: 2px solid var(--primary-color);
+  margin: 1.4rem 0 2rem 2.75%;
+}
+p span.category {
+  display: inline-block;
+  width: 225px;
+}
+fieldset hr {
+  margin-left: 0;
+  width: 325px;
+}
+/**************************** END OF FORM CSS FOR CHECKOUT PAGE *******************************/
 
 /* The slider */
 .slider {
