@@ -29,7 +29,7 @@ function makeFooterVisible(cartFooter, numItems) {
     }
   }
   //Calculates the total for items and cost
-  function getTotal(cartItems){
+  export function getTotal(cartItems){
     let totalCost = 0;
     let numItems = 0;
     for (let i = 0; i < cartItems.length; i++) {
@@ -38,8 +38,7 @@ function makeFooterVisible(cartFooter, numItems) {
       totalCost += finalCost;
       numItems += item.quantity;
     }
-    return [totalCost, numItems];
-    //renderTotal(numItems, totalCost); 
+    return [totalCost, numItems]; 
   }
   //Renders the cart total cost and item count
   function renderTotal(numItems, totalCost) {

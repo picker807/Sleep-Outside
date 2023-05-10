@@ -8,7 +8,7 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
@@ -20,50 +20,66 @@
       <section class="products">
         <h2>Review & Place your Order</h2>
       </section>
-      <div class="container">
-        <div class="form-container">
-          <form id="checkout-form">
-            <h2>Customer Information</h2>
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" required>
-      
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" required>
-      
-            <label for="street-address">Street Address:</label>
-            <input type="text" id="street-address" required>
-      
-            <label for="city">City:</label>
-            <input type="text" id="city" required>
-      
-            <label for="state">State:</label>
-            <input type="text" id="state" required>
-      
-            <label for="zip-code">Zip Code:</label>
-            <input type="text" id="zip-code" required>
-      
-            <h2>Payment Information</h2>
-            <label for="credit-card-number">Credit Card Number:</label>
-            <input type="text" id="credit-card-number" required>
-      
-            <label for="expiration-date">Expiration Date:</label>
-            <input type="text" id="expiration-date" required>
-      
-            <label for="security-code">Security Code:</label>
-            <input type="text" id="security-code" required>
-      
-            <button type="submit" id="checkout-btn" disabled>Checkout</button>
-          </form>
-        </div>
-      
-        <div class="order-summary">
-          <h2>Order Summary</h2>
-          <p>Subtotal: $0.00</p>
-          <p>Shipping Estimate: $0.00</p>
-          <p>Tax: $0.00</p>
-          <h3>Order Total: $0.00</h3>
-        </div>
+      <section class="checkout-form">
+        <form name="checkout">
+          <fieldset>
+            <legend>Shipping</legend>
+            <div class="checkout__name">
+              <label for="fname">First Name</label>
+              <input name="fname" value="fred" required />
+              <label for="lname">Last Name</label>
+              <input name="lname" value="flintstone" required />
+            </div>
+            <div class="checkout__address">
+              <label for="street">Street</label>
+              <input name="street" value="298 Gifford Rd" required />
+              <label for="city">City</label>
+              <input name="city" value="Sidney" required />
+              <label for="state">State</label>
+              <input name="state" value="NY" required />
+              <label for="zip">Zip</label>
+              <input name="zip" id="zip" value="13838" required />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+            <div class="checkout__card">
+              <label for="cardNumber">Card number</label>
+              <input name="cardNumber" value="1234123412341234" required />
+              <label for="expiration">Expiration</label>
+              <input name="expiration" value="10/30" required />
+              <label for="code">Security Code</label>
+              <input name="code" value="123" required />
+            </div>
+          </fieldset>
+          <fieldset class="checkout-summary">
+            <legend>Order Summary</legend>
+            <ul>
+              <li>
+                <label for="cartTotal"
+                  >Item Subtotal(<span id="num-items"></span>)</label
+                >
+                <p name="cartTotal" id="cartTotal"></p>
+              </li>
+              <li>
+                <label for="shipping">Shipping Estimate</label>
+                <p id="shipping"></p>
+              </li>
+              <li>
+                <label for="tax">Tax</label>
+                <p id="tax"></p>
+              </li>
+              <li>
+                <label for="orderTotal"><b>Order Total</b></label>
+                <p id="orderTotal"></p>
+              </li>
+            </ul>
+          </fieldset>
+      <div class="checkout-button-container">
+        <button id="checkoutSubmit" type="submit">Submit Order</button>
       </div>
+    </form>
+  </section> 
     </main>
 
     <footer id="main-footer"></footer>
