@@ -1,5 +1,6 @@
-import {getTotal} from ShoppingCart.mjs;
+import {getTotal} from "./ShoppingCart.mjs";
 import ExternalServices from "./ExternalServices.mjs";
+import {getLocalStorage} from "./utils.mjs";
 
 const services = new ExternalServices();
 
@@ -43,6 +44,7 @@ export default class CheckoutProcess {
       init() {
         this.list = getLocalStorage(this.key);
         [this.itemTotal, this.numItems] = getTotal(this.list);
+        this.displayItemSummary();
         this.calculateOrderTotal();
       }
     
@@ -50,10 +52,10 @@ export default class CheckoutProcess {
         const itemTotalElement = document.querySelector(this.outputSelector + " #cartTotal");
         const itemNumElement = document.querySelector(this.outputSelector + " #num-items");
         itemNumElement.innerText = this.numItems;
-        itemTotalElement.inerText = "$" + this.itemTotal;
+        itemTotalElement.innerText = "$" + this.itemTotal.toFixed(2);
       }
       calculateOrderTotal() {
-        this.shipping = (numItems - 1)*2 + 10;
+        this.shipping = (this.numItems - 1)*2 + 10;
         this.tax = this.itemTotal * .06;
         this.orderTotal = this.itemTotal + this.shipping + this.tax;
 
@@ -64,21 +66,23 @@ export default class CheckoutProcess {
         const shipping = document.querySelector(this.outputSelector + " #shipping");
         const tax = document.querySelector(this.outputSelector + " #tax");
         const orderTotal = document.querySelector(this.outputSelector + " #orderTotal");
-        shipping.innerText = "$" + this.shipping;
-        tax.innerText = "$" + this.tax;
-        orderTotal.innerText = "$" + this.orderTotal;
+        shipping.innerText = "$" + this.shipping.toFixed(2);
+        tax.innerText = "$" + this.tax.toFixed(2);
+        orderTotal.innerText = "$" + this.orderTotal.toFixed(2);
     }
 
     async checkout() {
         const formElement = document.forms["checkout"];
-    
+        //Because our list contains single entries of items with their quantities, we must unpack
+        // the list, creating a longer list with an individual entry for each item. The server does not recognize the quantity property.
+        const unpackedList = this.list.flatMap(item => Array.from({length: item.quantity}, () =>item ));
         const json = formDataToJSON(formElement);
         // add totals, and item details
         json.orderDate = new Date();
         json.orderTotal = this.orderTotal;
         json.tax = this.tax;
         json.shipping = this.shipping;
-        json.items = packageItems(this.list);
+        json.items = packageItems(unpackedList);
         console.log(json);
         try {
           const res = await services.checkout(json);
