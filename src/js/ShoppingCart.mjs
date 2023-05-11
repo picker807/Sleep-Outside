@@ -29,7 +29,7 @@ function makeFooterVisible(cartFooter, numItems) {
     }
   }
   //Calculates the total for items and cost
-  function getTotal(cartItems){
+  export function getTotal(cartItems){
     let totalCost = 0;
     let numItems = 0;
     for (let i = 0; i < cartItems.length; i++) {
@@ -38,7 +38,7 @@ function makeFooterVisible(cartFooter, numItems) {
       totalCost += finalCost;
       numItems += item.quantity;
     }
-    renderTotal(numItems, totalCost); 
+    return [totalCost, numItems]; 
   }
   //Renders the cart total cost and item count
   function renderTotal(numItems, totalCost) {
@@ -56,6 +56,7 @@ export default class ShoppingCart {
         const cartItems = getLocalStorage(this.key);
         const htmlItems = cartItems.map((item) => cartItemTemplate(item));
         document.querySelector(this.elemSelector).innerHTML = htmlItems.join("");
-        getTotal(cartItems);
+        const [a,b] = getTotal(cartItems);
+        renderTotal(b,a);
     }
 }

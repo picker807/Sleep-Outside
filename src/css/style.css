@@ -551,3 +551,138 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+/*Checkout Button (Cart Page)*/
+#checkout-button {
+display: inline-block;
+  background-color: #007bff;
+  color: #c3bdbd;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#checkout-button:hover {
+  background-color: #0062cc;
+}
+/*End Checkout Button*/
+
+/*Checkout Page*/
+.checkout-form {
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #0509f4;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form fieldset {
+  background-color: #c3c7cb;
+  margin: 0 1rem 0.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+.checkout-form legend {
+  background-color: #9ea2a6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 10rem;
+}
+
+.checkout-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"],
+.checkout-form input[type="number"],
+.checkout-form select {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.checkout-form input:focus {
+  outline: none;
+  border-color: #6495ed;
+}
+
+.checkout-form .checkout__name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.checkout-form .checkout__name label {
+  width: 48%;
+}
+
+.checkout-form .checkout__name input {
+  width: 48%;
+}
+
+.checkout-form .checkout__address label {
+  width: 22%;
+}
+
+.checkout-form .checkout__address input {
+  width: 75%;
+}
+
+.checkout-form .checkout-summary {
+  flex-basis: 100%;
+  margin-top: 1rem;
+}
+
+.checkout-form .checkout-summary ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-form .checkout-summary ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.checkout-form .checkout-summary ul li label {
+  font-weight: bold;
+}
+
+.checkout-form .checkout-summary ul li p {
+  margin: 0;
+  text-align: left;
+}
+
+.checkout-form button[type="submit"] {
+  background-color: #6495ed;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.checkout-form button[type="submit"]:hover {
+  background-color: #4169e1;
+}
