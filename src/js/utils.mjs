@@ -17,7 +17,13 @@ export function getLocalStorage(key) {
 //  const newData = [...currentData, data];
 //  localStorage.setItem(key, JSON.stringify(newData));
 //}
-export function setLocalStorage(key, data) {
+export function setLocalStorage(key, data, clearStorage = false) {
+  //Clear local storage on successful order completion
+  if(clearStorage) {
+    localStorage.clear();
+    return;
+  }
+
   let currentData = JSON.parse(localStorage.getItem(key)) || [];
   currentData = Array.isArray(currentData) ? currentData : [currentData];
   let updatedData = [...currentData];
@@ -81,6 +87,23 @@ export async function loadHeaderFooter() {
   const footerElem = document.querySelector("#main-footer");
   renderWithTemplate(footerTemp, footerElem);
 
+}
+
+export function alertMessage (message, scroll=true){
+  const alertDiv = document.createElement("div");
+  alertDiv.className = "alert";
+  alertDiv.innerText = message;
+  const main = document.querySelector("main");
+  main.insertBefore(alertDiv, main.firstChild);
+  if(scroll) {
+    window.scrollTo(0,0);
+  }
+}
+
+export function removeAllAlerts() {
+  console.log("remove all alert");
+  const alerts = document.querySelectorAll(".alert");
+  alerts.forEach((alert) => document.querySelector("main").removeChild(alert));
 }
 
 
