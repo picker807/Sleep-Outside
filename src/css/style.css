@@ -686,3 +686,12 @@ display: inline-block;
 .checkout-form button[type="submit"]:hover {
   background-color: #4169e1;
 }
+
+/*Product listing list price to show a discount*/
+#list-price {
+  text-decoration: line-through;
+  color: red;
+  position: relative;
+  display: inline-block;
+}
+
