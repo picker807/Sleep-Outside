@@ -92,7 +92,7 @@ import {
         // console.log(res);
   
         setLocalStorage("so-cart", []);
-        window.location.href = "checkedout.html";
+        window.location.href = "success.html";
       } catch (err) {
         // get rid of any preexisting alerts.
         removeAllAlerts();
