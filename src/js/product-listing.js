@@ -8,6 +8,7 @@ const category = getParam("category")
 const dataInfo = new ExternalServices();
 const elem = document.querySelector(".product-list");
 const list = new ProductListing(category, dataInfo, elem);
+console.log(dataInfo);
 
 list.init();
 
