@@ -42,7 +42,7 @@ export default class ProductDetails {
       ...this.product,
       quantity
     };
-    console.log("ProductWithQuantity: ", productWithQuantity);
+    
     setLocalStorage("so-cart", productWithQuantity);
     alertMessage(`${quantity} ${this.product.NameWithoutBrand}(s) added to cart!`);
   }
