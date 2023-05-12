@@ -695,3 +695,34 @@ display: inline-block;
   display: inline-block;
 }
 
+/*Success Page*/
+.exciting-header1 {
+  margin-left: 2rem;
+  color: #0059ff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.exciting-header2 {
+  margin-left: 2rem;
+  color: #00a17b;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  text-shadow: 2px 2px 0 #000;
+  animation: slide 1s ease-in-out infinite alternate;
+}
+
+@keyframes slide {
+  from { transform: translateX(-10px); }
+  to { transform: translateX(10px); }
+}
+/* END Success Page */
+
+.alert {
+  padding: 15px;
+  background-color: #f6b73c;
+  color: rgb(0, 0, 0);
+  border: 2px solid #ff8502;
+  border-radius: 50px;
+}
