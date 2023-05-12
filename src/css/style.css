@@ -249,6 +249,21 @@ button {
   transform: rotate(20deg);
 }
 
+/* Style the headings */
+.product-grid li h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-out;
+}
+
+/* Add hover effect to headings */
+.product-grid li:hover h2 {
+  color: #f9c74f;
+}
 
 
 /* Start Newsletter styles */
