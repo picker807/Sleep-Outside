@@ -44,7 +44,7 @@ function searchBar() {
         .textContent.toLocaleLowerCase();
 
       if (
-        !productName.includes(userSearch) &&
+        !productName.includes(userSearch) ||
         !brandName.includes(userSearch)
       ) {
         li[i].classList.add("hide");
