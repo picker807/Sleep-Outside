@@ -53,7 +53,7 @@ export default class CheckoutProcess {
       }
     
       displayItemSummary(){
-        const itemTotalElement = document.querySelector(this.outputSelector + " #cartTotal");
+        const itemTotalElement = document.querySelector(this.outputSelector + " #subtotal");
         const itemNumElement = document.querySelector(this.outputSelector + " #num-items");
         itemNumElement.innerText = this.numItems;
         itemTotalElement.innerText = "$" + this.itemTotal.toFixed(2);
@@ -69,7 +69,7 @@ export default class CheckoutProcess {
       displayOrderTotals() {
         const shipping = document.querySelector(this.outputSelector + " #shipping");
         const tax = document.querySelector(this.outputSelector + " #tax");
-        const orderTotal = document.querySelector(this.outputSelector + " #orderTotal");
+        const orderTotal = document.querySelector(this.outputSelector + " #totalBalance");
         shipping.innerText = "$" + this.shipping.toFixed(2);
         tax.innerText = "$" + this.tax.toFixed(2);
         orderTotal.innerText = "$" + this.orderTotal.toFixed(2);
