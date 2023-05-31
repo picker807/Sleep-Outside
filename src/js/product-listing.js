@@ -19,6 +19,12 @@ const searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener("click", () => {
   performSearch();
 });
+document.addEventListener("keypress", function (event) {
+  if (event.key === "Enter" && event.target == search) {
+    event.preventDefault();
+    searchButton.click();
+  }
+});
 
 // Wait for slider to be clicked to change the arranged data
 let slider = document.getElementById("sortByPrice");
