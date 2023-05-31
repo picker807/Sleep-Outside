@@ -12,6 +12,20 @@ console.log(dataInfo);
 
 list.init();
 
+const search = document.querySelector("#searchBar");
+
+search.placeholder = `Search for ${category}`;
+const searchButton = document.querySelector("#searchButton");
+searchButton.addEventListener("click", () => {
+  performSearch();
+});
+document.addEventListener("keypress", function (event) {
+  if (event.key === "Enter" && event.target == search) {
+    event.preventDefault();
+    searchButton.click();
+  }
+});
+
 // Wait for slider to be clicked to change the arranged data
 let slider = document.getElementById("sortByPrice");
 slider.addEventListener("change", () => {
@@ -23,33 +37,32 @@ slider.addEventListener("change", () => {
     list.init();
   }
 });
+  
 
-function searchBar() {
-  const search = document.querySelector("#searchBar");
-  search.placeholder = `Search for ${category}`;
-  search.addEventListener("search", () => {
-    let results = document.querySelector(".product-list");
-
+  function performSearch() {
     let userSearch = search.value.toLowerCase();
+    const results = document.querySelector(".product-list");
     let li = results.getElementsByTagName("li");
+    console.log(li);
     for (let i = 0; i < li.length; i++) {
       if (li[i].classList.contains("hide")) {
         li[i].classList.remove("hide");
       }
       let productName = li[i]
         .getElementsByTagName("h2")[0]
-        .textContent.toLocaleLowerCase();
+        .textContent.toLowerCase();
+        console.log(productName);
       let brandName = li[i]
         .getElementsByTagName("h3")[0]
-        .textContent.toLocaleLowerCase();
+        .textContent.toLowerCase();
+        console.log(brandName);
 
       if (
-        !productName.includes(userSearch) ||
+        !productName.includes(userSearch) &&
         !brandName.includes(userSearch)
       ) {
         li[i].classList.add("hide");
       }
     }
-  });
-}
+  };
 
